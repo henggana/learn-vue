@@ -1,0 +1,17 @@
+extends layouts/main.pug
+
+block content
+  div(class="pa3 pa4-ns")
+    div(class="c-markdown-editor")
+  
+block pageScript
+  script(type="text/x-template" id="t-markdown-editor")
+    div(class="cf")
+      div(class="fl w-50 pr2")
+        textarea(class="w-100 h-100" @input="update")
+      div(class="fl w-50")
+        div(v-html="markdown")
+  
+  script(src="static/js/marked.min.js")
+  script(src="static/js/markdown-editor.js")
+  
